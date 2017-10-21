@@ -3,7 +3,7 @@ class OauthController < ApplicationController
    begin
      oauth = OauthService.new(request.env['omniauth.auth'])
      if oauth_account = oauth.create_oauth_account!
-         
+
          redirect_to Config.provider_login_path
      end
    rescue => e
